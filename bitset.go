@@ -69,7 +69,7 @@ func (s BitSet) Dump() string {
 	buffer := bytes.NewBufferString("")
 	l := len(s.v)
 	for i, n := range s.v {
-		buffer.WriteString(strconv.Itoa(n))
+		buffer.WriteString(strconv.FormatUint(n, 10))
 		if i < l-1 {
 			buffer.WriteString(",")
 		}
@@ -82,7 +82,7 @@ func Load(str string) BitSet {
 	s.v = make([]uint, 0)
 	bitWords := strings.Split(str, ",")
 	for _, bitWord := range bitWords {
-		bitUint, _ := strconv.Atoi(bitWord)
+		bitUint, _ := strconv.ParseUint(bitWord, 10, 0)
 		s.v = append(s.v, bitUint)
 	}
 	return s
