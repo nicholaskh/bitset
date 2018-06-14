@@ -4,7 +4,7 @@
 # Usage
 First install the library with
 ```
-go get xojoc.pw/bitset
+go get github.com/nicholaskh/bitset
 ```
 
 ...then run...
@@ -21,7 +21,7 @@ package main
 
 import (
 	"fmt"
-	"xojoc.pw/bitset"
+	"github.com/nicholaskh/bitset"
 )
 
 func main() {

@@ -1,5 +1,3 @@
-// Written by http://xojoc.pw. Public Domain.
-
 package bitset
 
 import (

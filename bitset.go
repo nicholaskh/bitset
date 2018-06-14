@@ -1,5 +1,3 @@
-// Written by https://xojoc.pw. Public Domain.
-
 // Package bitset implements a BitSet data structure.
 //
 // A BitSet is a mapping between unsigned integers and boolean values.
@@ -23,7 +21,7 @@
 //
 // If you wonder why you should use this package and not math/big see:
 // https://typed.pw/a/29
-package bitset // import "xojoc.pw/bitset"
+package bitset
 
 // TODO: intersects next/prev zero
 // TODO: fmt.Formatter
