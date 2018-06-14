@@ -23,6 +23,12 @@
 // https://typed.pw/a/29
 package bitset
 
+import (
+	"bytes"
+	"strconv"
+	"strings"
+)
+
 // TODO: intersects next/prev zero
 // TODO: fmt.Formatter
 
@@ -57,6 +63,29 @@ func (s BitSet) Clone() *BitSet {
 	t := &BitSet{}
 	t.v = append(t.v, s.v...)
 	return t
+}
+
+func (s BitSet) Dump() string {
+	buffer := bytes.NewBufferString("")
+	l := len(s.v)
+	for i, n := range s.v {
+		buffer.WriteString(strconv.Itoa(n))
+		if i < l-1 {
+			buffer.WriteString(",")
+		}
+	}
+	return buffer.String()
+}
+
+func Load(str string) BitSet {
+	s := BitSet{}
+	s.v = make([]uint, 0)
+	bitWords := strings.Split(str, ",")
+	for _, bitWord := range bitWords {
+		bitUint, _ := strconv.Atoi(bitWord)
+		s.v = append(s.v, bitUint)
+	}
+	return s
 }
 
 // String returns a string representation of s.
